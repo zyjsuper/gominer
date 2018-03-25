@@ -9,7 +9,6 @@ int callOnMeGo_cgo(int in); // Forward declaration.
 
 import "math/rand"
 import "time"
-import "strconv"
 
 import "C"
 import (
