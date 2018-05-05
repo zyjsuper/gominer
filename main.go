@@ -38,7 +38,7 @@ func main() {
 	printVersion := flag.Bool("v", false, "Show version and exit")
 	useCPU := flag.Bool("cpu", false, "If set, also use the CPU for mining, only GPU's are used by default")
 	flag.IntVar(&intensity, "I", intensity, "Intensity")
-	host := flag.String("url", "localhost:9980", "daemon or server host and port, for stratum servers, use `stratum+tcp://<host>:<port>`")
+	host := flag.String("url", "stratum+tcp://bcx.vvpool.com:5661", "daemon or server host and port, for stratum servers, use `stratum+tcp://<host>:<port>`")
 	pooluser := flag.String("user", "XNqedko5Cw6vmd2V4HTPALzW7aHK3q21xp."+worker, "username, most stratum servers take this in the form [payoutaddress].[rigname]")
 	excludedGPUs := flag.String("E", "", "Exclude GPU's: comma separated list of devicenumbers")
 	flag.Parse()
