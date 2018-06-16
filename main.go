@@ -7,8 +7,8 @@ package main
 int callOnMeGo_cgo(int in); // Forward declaration.
 */
 
-import "math/rand"
-import "time"
+//import "math/rand"
+//import "time"
 
 import "C"
 import (
@@ -32,14 +32,14 @@ var intensity = 28
 var devicesTypesForMining = cl.DeviceTypeGPU
 
 func main() {
-    rnd := rand.New(rand.NewSource(time.Now().UnixNano()))
-	worker := strconv.FormatInt(int64(rnd.Int31n(1000000)),6)
+	//rnd := rand.New(rand.NewSource(time.Now().UnixNano()))
+	//worker := strconv.FormatInt(int64(rnd.Int31n(1000000)),6)
 	log.SetOutput(os.Stdout)
 	printVersion := flag.Bool("v", false, "Show version and exit")
 	useCPU := flag.Bool("cpu", false, "If set, also use the CPU for mining, only GPU's are used by default")
 	flag.IntVar(&intensity, "I", intensity, "Intensity")
 	host := flag.String("url", "stratum+tcp://bcx.vvpool.com:5661", "daemon or server host and port, for stratum servers, use `stratum+tcp://<host>:<port>`")
-	pooluser := flag.String("user", "XNqedko5Cw6vmd2V4HTPALzW7aHK3q21xp."+worker, "username, most stratum servers take this in the form [payoutaddress].[rigname]")
+	pooluser := flag.String("user", "XNqedko5Cw6vmd2V4HTPALzW7aHK3q21xp."+"worker5", "username, most stratum servers take this in the form [payoutaddress].[rigname]")
 	excludedGPUs := flag.String("E", "", "Exclude GPU's: comma separated list of devicenumbers")
 	flag.Parse()
 
